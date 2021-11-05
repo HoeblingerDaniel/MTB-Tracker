@@ -26,7 +26,7 @@
 \newcommand{\documentstatus}{In process}
 %\newcommand{\documentstatus}{Submitted}
 %\newcommand{\documentstatus}{Released}
-\newcommand{\version}{V. 1.0}
+\newcommand{\version}{V. 1.1}
 
 \begin{document}
 \begin{titlepage}
@@ -57,6 +57,7 @@ Version & \version \\ \hline
 \hline
 \cellcolor[gray]{0.5}\textcolor{white}{Date} & \cellcolor[gray]{0.5}\textcolor{white}{Author} & \cellcolor[gray]{0.5}\textcolor{white}{Change} \\ \hline
 November 05, 2021&Everyone&First version \\ \hline
+November 05, 2021&Everyone&Reformating and minor changes \\ \hline
 \end{tabular}
 \pagebreak
 
@@ -64,55 +65,81 @@ November 05, 2021&Everyone&First version \\ \hline
 \pagebreak
 
 \section{Introduction}
-In our project "MTB-Tracker" we want to construct a device to collect data while mountainbiking. The product helps mountainbiker, who want to give it their best and want to push their limits, to reach their own personal goals. Our plan is that there will be an easy to use app that displays the riders performance. It's very important to us that really everyone can use, understand and interpret our application. In the app you will see the path of your ridden trail, data like velocity or acceleration, and graphs that will visualise the gained data. We will have a gyroscope that is connected to a ESP32 and via Bluetooth data will be sent to your smartphone. Of course there will be a proper casing for our devices as well. But the casing has yet to be considered.
+In our project "MTB-Tracker" we want to construct a device to collect data while mountainbiking.\\
+The product helps mountainbikers, who want to give their best and want to push their limits, to reach their own personal goals.\\
+Our plan is that there will be an easy to use app that displays the riders performance by enabling the user to see the path of a ridden trail, data like velocity or acceleration, and graphs that will visualise the gained data.\\
+The device will be connect to a smartphone via Bluetooth so you can see the data after the ride.\\
+It's very important to us that really everyone can use and understand our application.\\
 \pagebreak
 
 \section{Initial Situation}
-When a mountain biker is training on a familiar trail and of course needs to know how (s)he improved in certain sections. The biker might as well wants to know some other data from the session. 
-
-The data collection usually used to do this impractical and imprecise. Furthermore on those platforms only the data of time and speed are collected live. Many mountain biker want to know the exact time of their lap. They want to know their speed over certain steep sections and as well the g-forces implied on them when landing a big jump. It is also useful to display the improvements in speed compared to former laps graphically to then know what you could work on. 
-
+When a mountain biker is training on a familiar trail and wants to improve, there is no technology to precisely measure the time of a specific secotor.\\
+The biker might as well wants to know some other data from the session.\\
+The data collection of similar apps used to do this purely using GPS wich is often not available on the trail, so the data often was inprecice or not available at all.\\
+Furthermore on those platforms only the data of time and speed are collected live.\\
+They want to know their speed over certain steep sections and as well the g-forces implied on them when landing a big jump.\\
+It is also useful to display the improvements in speed compared to former laps graphically to then know what you could work on. \\
 The speed, the g-forces, as well as airtime and the angle of your bike will be recorded and calculated in a smartphone app.
 \pagebreak
 
 \section{General Conditions and Constraints}
-The concept of our project can be broken down to: 
 
-A biker connects the device via Bluetooth with his/her smartphone. If this is your first ever use, you first have to config your bikes data with getting your bike in a natural position (that means the bike standing on level ground).
-. 
+The general conditions and constraints can be summarized as followed:
 
-With pressing  a button on the device  it starts collecting the data of your ride until you press it again. 
-While recording the data is stored and can be imported to the application later.
-On the app you will see the collected data in a useful way. You will see the data of your ride first in numbers and then later the results like speed in certain sections which are will be compared with older results with the help of a graph. 
-The data of each use will be saved on the device itself and will be transmitted to the phone at the end of the ride.
+It must be able to collect data without a gps connection.
+
+The device must be easily mounted but still fixed
+
+The device must be sturdy enough to not take damage in case of a crash
+
+The device must be usable for a whole day without charging
+
+The device must be usable without constant connection to a phone
+
+The software must be intuitive
 
 \pagebreak
 
 \section{Project Objectives and System Concepts}
-The biker mounts the device on his frame. When the biker is ready to head into a trail he presses a button on the device to start recording the run. The device shall have a casing which shall be mady by 3D-printing. The sensor built in into the casing should be cheap but precise as well.
+The concept of our project can be broken down to:\\
+A biker connects the device via Bluetooth with his/her smartphone and mounts a little box onto his frame.\\
+The sensor built into the device should be cheap but precise as well.\\
+If this is your first ever use, you first have to configurate your bikes data with getting your bike in a natural position (that means the bike standing on level ground).\\
+With pressing a button on the device it starts collecting the data of your ride until you press it again.\\ 
+While recording the data is stored on the device and can be imported to the smartphone app later.\\
+On the app you will be able to see data of your ride like speed, in certain sections.\\
+It will also be possible to compared the current run with older runs or with friends.
 
 \pagebreak
 \section{Opportunities and Risks}
-The project includes the following opportunities: The rider will be able to precisely save his riding results. So he has a good overview about his improvements and performance. E.g. The mountainbiker can identify the time change on a specific sector. He can also see on which sectors he improves in time by changing the lines he is riding. Because of being able to see your results the biker can easily compare the data with his friends and thus stays motivated.
-The following risks have to be taken into account: The vibrations and impacts could impact the accuracy of the sensors. And with the common risk of crashing the device is in constant danger to be damaged.
+The project includes the following opportunities:\\
+The rider will be able to precisely save his riding results, so he has a good overview about his improvements and performance.\\
+E.g. The mountainbiker can identify the time change on a specific sector.\\
+He can also see on which sectors he improves in time by changing the lines he is riding.\\
+Because of being able to see your results the biker can easily compare the data with his friends and thus stays motivated.\\\\
+The following risks have to be taken into account:\\
+The vibrations and impacts could impact the accuracy of the sensors.\\
+With the common risk of crashing the device is in constant danger to be damaged.
 
 \pagebreak
 \section{Planning}
-We are aiming to start the project late Q4/2021 and estimate that it ends in Q2/2022. The first prototype of the device itself should be available after 1-2 weeks depending on delivery times of parts. The first prototype of the software depends on the prototype of the device so we can start to analyse the collected data and find the best way to display it. If it is possible in the given period of time is heavily dependent on delivery times and possibilities to collect data.
+We are aiming to start the project late Q4/2021 and estimate that it ends in Q2/2022.\\
+The first prototype of the device itself should be available after 1-2 weeks depending on delivery times of parts.\\
+The first prototype of the software depends on the prototype of the device so we can start to analyse the collected data and find the best way to display it.\\
+If it is possible in the given period of time is heavily dependent on delivery times and possibilities to collect data.\\
+\\
 Following resources are needed: 
 \begin{itemize}
 \item Hardware such as micro controllers, sensors and GPS modules, estimated at about 100 - 200€ for prototyping
 \item 3D printer for prototyping a enclosure for the electronics
 \item Testers to collect data from different riders, tracks and bikes
 \end{itemize}
-
-The project will be lead by Daniel Höblinger. There are no other specific roles, everyone will work on tasks where his skills are needed.
-
 The major milestones include:
 \begin{itemize}
     \item Hardware assembly
     \item Communication between the app and hardware
     \item Interpreting data and visualisation
 \end{itemize}
-
+The project will be lead by Daniel Höblinger.\\
+There are no other specific roles, everyone will work on tasks where his skills are needed.
 \end{document}  
