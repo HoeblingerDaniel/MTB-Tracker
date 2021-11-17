@@ -20,4 +20,9 @@ public class RomanToArabicTest
     public void itShouldReturn3_GivenIII() {
         assertEquals(3, RomanToArabic.toArabic("III"));
     }
+
+    @Test
+    public void itShouldReturn5_GivenV() {
+        assertEquals(5, RomanToArabic.toArabic("V"));
+    }
 }
