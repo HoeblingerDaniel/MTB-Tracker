@@ -45,4 +45,9 @@ public class RomanToArabicTest
     public void itShouldReturn11_GivenXI() {
         assertEquals(11, RomanToArabic.toArabic("XI"));
     }
+
+    @Test
+    public void itShouldReturn15_GivenXV() {
+        assertEquals(15, RomanToArabic.toArabic("XV"));
+    }
 }
