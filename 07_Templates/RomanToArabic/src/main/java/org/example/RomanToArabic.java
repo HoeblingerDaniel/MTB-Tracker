@@ -9,6 +9,9 @@ public class RomanToArabic
             if (romanNumber.charAt(i) == 'V') arabicNumber += 5;
             if (romanNumber.charAt(i) == 'X') arabicNumber += 10;
             if (romanNumber.charAt(i) == 'L') arabicNumber += 50;
+            if (romanNumber.charAt(i) == 'C') arabicNumber += 100;
+            if (romanNumber.charAt(i) == 'D') arabicNumber += 500;
+            if (romanNumber.charAt(i) == 'M') arabicNumber += 1000;
         }
         return arabicNumber;
     }
