@@ -67,23 +67,17 @@ public class RomanToArabicTest
     }
 
     @Test
-    public void itShouldReturn4_GivenIV() {
-        assertEquals(4, RomanToArabic.toArabic("IV"));
-    }
+    public void itShouldReturn4_GivenIV() {assertEquals(4, RomanToArabic.toArabic("IV"));}
 
     @Test
-    public void itShouldReturn14_GivenXIV() {
-        assertEquals(14, RomanToArabic.toArabic("XIV"));
-    }
+    public void itShouldReturn14_GivenXIV() {assertEquals(14, RomanToArabic.toArabic("XIV"));}
 
     @Test
-    public void itShouldReturn900_GivenCM() {
-        assertEquals(14, RomanToArabic.toArabic("XIV"));
-    }
+    public void itShouldReturn900_GivenCM() {assertEquals(14, RomanToArabic.toArabic("XIV"));}
 
     @Test
     public void itShouldReturn400_GivenCD() {
-        assertEquals(491, RomanToArabic.toArabic("CDXCI"));
+        assertEquals(946, RomanToArabic.toArabic("CMXLVI"));
     }
 
     @Test
