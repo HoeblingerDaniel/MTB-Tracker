@@ -20,6 +20,7 @@ public class RomanToArabic
               condition400 = false;
             }
 
+
             if (romanNumber.charAt(i) == 'I' && condition) arabicNumber += 1;
             if (romanNumber.charAt(i) == 'V' && condition) arabicNumber += 5;
             if (romanNumber.charAt(i) == 'X') arabicNumber += 10;
