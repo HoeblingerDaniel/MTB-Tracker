@@ -77,8 +77,13 @@ public class RomanToArabicTest
     }
 
     @Test
+    public void itShouldReturn900_GivenCM() {
+        assertEquals(14, RomanToArabic.toArabic("XIV"));
+    }
+
+    @Test
     public void itShouldReturn400_GivenCD() {
-        assertEquals(401, RomanToArabic.toArabic("CDI"));
+        assertEquals(491, RomanToArabic.toArabic("CDXCI"));
     }
 
     @Test
