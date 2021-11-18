@@ -78,6 +78,6 @@ public class RomanToArabicTest
 
     @Test
     public void itShouldReturn400_GivenCD() {
-        assertEquals(400, RomanToArabic.toArabic("CD"));
+        assertEquals(401, RomanToArabic.toArabic("CDI"));
     }
 }
