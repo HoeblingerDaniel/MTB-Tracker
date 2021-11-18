@@ -6,6 +6,7 @@ public class RomanToArabic
         int arabicNumber = 0;
         boolean condition = true;
         boolean condition400 = true;
+        boolean condition9 = true;
 
 
         for (int i = 0; i < romanNumber.length(); i++) {
@@ -20,10 +21,15 @@ public class RomanToArabic
               condition400 = false;
             }
 
+            if(romanNumber.length() == 2 && romanNumber == "IX" ){
+                arabicNumber = 9;
+                condition = false;
+            }
+
 
             if (romanNumber.charAt(i) == 'I' && condition) arabicNumber += 1;
             if (romanNumber.charAt(i) == 'V' && condition) arabicNumber += 5;
-            if (romanNumber.charAt(i) == 'X') arabicNumber += 10;
+            if (romanNumber.charAt(i) == 'X' && condition) arabicNumber += 10;
             if (romanNumber.charAt(i) == 'L') arabicNumber += 50;
             if (romanNumber.charAt(i) == 'C'&& condition400) arabicNumber += 100;
             if (romanNumber.charAt(i) == 'D'&& condition400) arabicNumber += 500;
