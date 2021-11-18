@@ -6,14 +6,14 @@ public class RomanToArabic
         int arabicNumber = 0;
         boolean condition = true;
         boolean condition400 = true;
-        boolean condition90 = true;
+        boolean condition4 = true;
 
 
         for (int i = 0; i < romanNumber.length(); i++) {
             if (romanNumber.length() >= 2 && romanNumber.charAt(romanNumber.length()-1) == 'V'
-                    && romanNumber.charAt(romanNumber.length()-2) == 'I' && romanNumber.length() >= 2&& condition) {
+                    && romanNumber.charAt(romanNumber.length()-2) == 'I' && condition4) {
                 arabicNumber += 4;
-                condition = false;
+                condition4 = false;
             }
 
             if((romanNumber.length() >= 2&& romanNumber.charAt(0) == 'C'&& romanNumber.charAt(1) == 'D') &&  condition400){
@@ -21,14 +21,19 @@ public class RomanToArabic
               condition400 = false;
             }
 
-            if(romanNumber.length() == 2 && romanNumber.charAt(0) == 'X'&& romanNumber.charAt(1) == 'C' &&  condition90 ){
+            if(romanNumber.length() == 2 && romanNumber.charAt(0) == 'X'&& romanNumber.charAt(1) == 'C' ){
+                arabicNumber = 90;
+                condition400 = false;
+            }
+
+            if(romanNumber.length() == 2 && romanNumber == "IX"){
                 arabicNumber = 9;
-                condition90 = false;
+                condition = false;
             }
 
 
-            if (romanNumber.charAt(i) == 'I' && condition) arabicNumber += 1;
-            if (romanNumber.charAt(i) == 'V' && condition) arabicNumber += 5;
+            if (romanNumber.charAt(i) == 'I' && condition4) arabicNumber += 1;
+            if (romanNumber.charAt(i) == 'V' && condition4) arabicNumber += 5;
             if (romanNumber.charAt(i) == 'X' && condition) arabicNumber += 10;
             if (romanNumber.charAt(i) == 'L') arabicNumber += 50;
             if (romanNumber.charAt(i) == 'C'&& condition400) arabicNumber += 100;
