@@ -24,11 +24,11 @@ public class RomanToArabic
                 arabicNumber += 40;
                 condition40 = false;
             }
-            if(index("XC", romanNumber) != -1  && condition90){
+            if(index("XC", romanNumber) != -1  && condition90) {
                 arabicNumber += 90;
                 condition90 = false;
             }
-            if(index("CD", romanNumber)  != -1 &&  condition400){
+            if(index("CD", romanNumber)  != -1 &&  condition400) {
               arabicNumber += 400;
               condition400 = false;
             }
@@ -47,9 +47,9 @@ public class RomanToArabic
         return arabicNumber;
     }
 
-    public static int index(String s, String RomanNumber){
-      for(int i = 0; i < RomanNumber.length() -1; i++){
-          if(s.charAt(0) == RomanNumber.charAt(i) && s.charAt(1) == RomanNumber.charAt(i+1)){
+    public static int index(String s, String RomanNumber) {
+      for(int i = 0; i < RomanNumber.length() -1; i++) {
+          if(s.charAt(0) == RomanNumber.charAt(i) && s.charAt(1) == RomanNumber.charAt(i+1)) {
               return i;
           }
       }
