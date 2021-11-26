@@ -1,8 +1,10 @@
 package org.example;
 
-public class Job {
+import java.util.Objects;
+
+public class Job implements Comparable<Job> {
     private String mName;
-    private Job mDependsOn;
+    Job mDependsOn;
 
     public Job(String name, Job dependsOn) {
         mName = name;
@@ -19,5 +21,31 @@ public class Job {
 
     public String getName() {
         return mName;
+    }
+
+    @Override
+    public String toString() {
+        return mName;
+    }
+
+    @Override
+    public int compareTo(Job o) {
+        if (o == null) {
+            throw new NullPointerException();
+        }
+        if(this == o.mDependsOn){
+            return -1;
+        }
+        else {
+            return 1;
+        }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Job job = (Job) o;
+        return Objects.equals(mName, job.mName);
     }
 }

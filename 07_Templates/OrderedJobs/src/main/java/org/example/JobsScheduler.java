@@ -3,9 +3,9 @@ package org.example;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Stream;
 
-public class JobsScheduler
-{
+public class JobsScheduler {
     private List<Job> mJobs = new LinkedList<Job>();
 
     public void registerJob(String jobName) {
@@ -16,22 +16,39 @@ public class JobsScheduler
     }
 
     public void sort() {
-
+        mJobs.sort(Job::compareTo);
     }
 
     public String getList() {
-        return null;
+        StringBuilder str = new StringBuilder();
+        for (Job job : mJobs) {
+            str.append(job.toString());
+        }
+        return str.toString();
     }
 
     public void registerJob(String dependentJob, String independentJob) {
-        Job job = new Job(independentJob);
-        if (!mJobs.contains(job)) {
-            mJobs.add(job);
+
+
+        Job independent = mJobs.stream()
+                .filter(j -> j.getName().equals(independentJob))
+                .findAny()
+                .orElse(null);
+        if (independent == null) {
+            independent = new Job(independentJob);
+            mJobs.add(independent);
         }
 
-        Job job2 = new Job(dependentJob, job);
-        if (!mJobs.contains(job2)) {
-            mJobs.add(job2);
+
+        Job dependent = mJobs.stream()
+                .filter(j -> j.getName().equals(dependentJob))
+                .findAny()
+                .orElse(null);
+        if (dependent == null) {
+            dependent = new Job(dependentJob);
+            mJobs.add(dependent);
         }
+
+        dependent.mDependsOn = independent;
     }
 }
