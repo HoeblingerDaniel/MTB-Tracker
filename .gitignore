@@ -289,3 +289,9 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/latex,linux,macos,windows
+
+03_SourceCode/MTB-Tracker_SmartphoneApp/.idea/
+
+07_Templates/MTB-Tracker_SmartphoneApp/.idea/
+
+07_Templates/MTB-Tracker_SmartphoneApp/app/build/
