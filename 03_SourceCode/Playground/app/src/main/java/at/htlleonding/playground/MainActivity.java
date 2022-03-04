@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         Button btn = findViewById(R.id.button1);
         TextView text = findViewById(R.id.text);
         btn.setOnClickListener(v -> {
+            text.setText("Max == HS");
             Intent intent = new Intent(getBaseContext(), SecondActivity.class);
             startActivity(intent);
         });
