@@ -2,6 +2,7 @@ package at.htlleonding.playground;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,10 +16,9 @@ public class MainActivity extends AppCompatActivity {
 
         Button btn = findViewById(R.id.button1);
         TextView text = findViewById(R.id.text);
-        btn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                text.setText("Max ist fett");
-            }
+        btn.setOnClickListener(v -> {
+            Intent intent = new Intent(getBaseContext(), SecondActivity.class);
+            startActivity(intent);
         });
     }
 }

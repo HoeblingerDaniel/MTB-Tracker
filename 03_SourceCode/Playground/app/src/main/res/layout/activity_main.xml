@@ -22,7 +22,7 @@
         android:id="@+id/button1"
         android:layout_width="207dp"
         android:layout_height="100dp"
-        android:text="Button"
+        android:text="Change Activity"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.45"
