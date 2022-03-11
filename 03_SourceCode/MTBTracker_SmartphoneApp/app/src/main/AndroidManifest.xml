@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MTBTracker_SmartphoneApp">
         <activity
+            android:name=".AddTrackActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

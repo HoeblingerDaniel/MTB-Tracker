@@ -17,4 +17,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.499" />
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="412dp"
+        android:layout_height="195dp"
+        tools:layout_editor_absoluteX="-2dp"
+        tools:layout_editor_absoluteY="1dp" />
+
+    <Button
+        android:id="@+id/buttonR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Press"
+        tools:layout_editor_absoluteX="145dp"
+        tools:layout_editor_absoluteY="450dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
