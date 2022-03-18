@@ -28,7 +28,7 @@ public class CarRaceTests {
 
     @Test
     public void itShouldAddCarToSecondRaceSection_AndRemoveItFromFirstSection_GivenCarMoved() {
-        FakeRaceSection[] sections = {new FakeRaceSection(), new FakeRaceSection()};
+        FakeRaceSection[] sections = {new FakeRaceSection(40), new FakeRaceSection()};
         CarRace race = new CarRace(sections);
         Car car = new FakeCar();
 
@@ -41,7 +41,7 @@ public class CarRaceTests {
 
     @Test
     public void itShouldNotMoveCarBetweenSections_GivenCarMovedTooLittle() {
-        FakeRaceSection[] sections = {new FakeRaceSection(), new FakeRaceSection()};
+        FakeRaceSection[] sections = {new FakeRaceSection(40), new FakeRaceSection()};
         CarRace race = new CarRace(sections);
         Car car = new FakeCar();
 
@@ -51,5 +51,20 @@ public class CarRaceTests {
         assertEquals(1, sections[0].numberOfAddCarsCalled());
         assertEquals(0, sections[1].numberOfAddCarsCalled());
         assertEquals(0, sections[0].numberOfRemoveCarsCalled());
+    }
+
+    @Test
+    public void itShouldMoveCarBetweenSections_GivenCarMovedTwice() {
+        FakeRaceSection[] sections = {new FakeRaceSection(15), new FakeRaceSection()};
+        CarRace race = new CarRace(sections);
+        Car car = new FakeCar();
+
+        race.addCar(car);
+        race.moveCar(car, 10);
+        race.moveCar(car, 10);
+
+        assertEquals(1, sections[0].numberOfAddCarsCalled());
+        assertEquals(1, sections[1].numberOfAddCarsCalled());
+        assertEquals(1, sections[0].numberOfRemoveCarsCalled());
     }
 }

@@ -12,7 +12,9 @@ public class CarRace {
     }
 
     public void moveCar(Car car, int fields) {
-        mSections[1].addCar(car);
-        mSections[0].removeCar(car);
+        if (mSections[0].move(car, fields) > 0) {
+            mSections[1].addCar(car);
+            mSections[0].removeCar(car);
+        }
     }
 }
