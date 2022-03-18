@@ -2,9 +2,14 @@ package at.htlleonding;
 
 public class FakeRaceSection implements RaceSection {
     private int mNumberOfAddCarsCalled;
+    private int mNumberOfRemoveCarsCalled;
 
-    public int numberofAddCarsCalled() {
+    public int numberOfAddCarsCalled() {
         return mNumberOfAddCarsCalled;
+    }
+
+    public int numberOfRemoveCarsCalled() {
+        return mNumberOfRemoveCarsCalled;
     }
 
     @Override
@@ -14,6 +19,6 @@ public class FakeRaceSection implements RaceSection {
 
     @Override
     public void removeCar(Car car) {
-
+        mNumberOfRemoveCarsCalled++;
     }
 }

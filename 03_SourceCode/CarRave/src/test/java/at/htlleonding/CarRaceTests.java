@@ -13,7 +13,7 @@ public class CarRaceTests {
         var sut = new CarRace(sections);
         sut.addCar(new FakeCar());
 
-        assertThat(sections[0].numberofAddCarsCalled(), is(equalTo(1)));
+        assertThat(sections[0].numberOfAddCarsCalled(), is(equalTo(1)));
     }
 
     @Test
@@ -23,18 +23,33 @@ public class CarRaceTests {
         sut.addCar(new FakeCar());
         sut.addCar(new FakeCar());
 
-        assertThat(sections[0].numberofAddCarsCalled(), is(equalTo(2)));
+        assertThat(sections[0].numberOfAddCarsCalled(), is(equalTo(2)));
     }
 
     @Test
-    public void itShouldAddCarToSecondRaceSection_GivenCarMoved() {
+    public void itShouldAddCarToSecondRaceSection_AndRemoveItFromFirstSection_GivenCarMoved() {
         FakeRaceSection[] sections = {new FakeRaceSection(), new FakeRaceSection()};
-        var sut = new CarRace(sections);
+        CarRace race = new CarRace(sections);
         Car car = new FakeCar();
-        sut.addCar(car);
 
-        sut.moveCar(car, 60);
+        race.addCar(car);
+        race.moveCar(car, 60);
 
-        assertThat(sections[0].numberofAddCarsCalled(), is(equalTo(2)));
+        assertEquals(1, sections[1].numberOfAddCarsCalled());
+        assertEquals(1, sections[0].numberOfRemoveCarsCalled());
+    }
+
+    @Test
+    public void itShouldNotMoveCarBetweenSections_GivenCarMovedTooLittle() {
+        FakeRaceSection[] sections = {new FakeRaceSection(), new FakeRaceSection()};
+        CarRace race = new CarRace(sections);
+        Car car = new FakeCar();
+
+        race.addCar(car);
+        race.moveCar(car, 10);
+
+        assertEquals(1, sections[0].numberOfAddCarsCalled());
+        assertEquals(0, sections[1].numberOfAddCarsCalled());
+        assertEquals(0, sections[0].numberOfRemoveCarsCalled());
     }
 }
