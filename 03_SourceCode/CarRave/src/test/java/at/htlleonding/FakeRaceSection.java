@@ -11,4 +11,9 @@ public class FakeRaceSection implements RaceSection {
     public void addCar(Car car) {
         mNumberOfAddCarsCalled++;
     }
+
+    @Override
+    public void removeCar(Car car) {
+
+    }
 }

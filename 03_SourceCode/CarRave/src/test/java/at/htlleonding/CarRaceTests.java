@@ -25,4 +25,16 @@ public class CarRaceTests {
 
         assertThat(sections[0].numberofAddCarsCalled(), is(equalTo(2)));
     }
+
+    @Test
+    public void itShouldAddCarToSecondRaceSection_GivenCarMoved() {
+        FakeRaceSection[] sections = {new FakeRaceSection(), new FakeRaceSection()};
+        var sut = new CarRace(sections);
+        Car car = new FakeCar();
+        sut.addCar(car);
+
+        sut.moveCar(car, 60);
+
+        assertThat(sections[0].numberofAddCarsCalled(), is(equalTo(2)));
+    }
 }
