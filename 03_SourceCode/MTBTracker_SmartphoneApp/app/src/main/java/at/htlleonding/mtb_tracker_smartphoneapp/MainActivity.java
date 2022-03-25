@@ -15,7 +15,8 @@ public class MainActivity extends AppCompatActivity {
 
         Button addTrackButton = findViewById(R.id.addTrackButton);
         addTrackButton.setOnClickListener(v -> {
-            Intent
+            Intent addTrackIntent = new Intent(getBaseContext(), AddTrackActivity.class);
+            startActivity(addTrackIntent);
         });
     }
 }

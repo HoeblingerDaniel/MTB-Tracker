@@ -1,0 +1,6 @@
+
+nach rechts wischen um track hinzuzufügen
+und liste von allen trails
+trail auswählbar um ihn dann zu fahren
+
+nach links wischen um die fahrten anzuschauen
