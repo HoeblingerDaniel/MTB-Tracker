@@ -4,3 +4,8 @@ und liste von allen trails
 trail auswählbar um ihn dann zu fahren
 
 mainscreen um die fahrten anzuschauen
+
+
+trail grün rot von geschwindigkeit her dies das
+
+Strecke kann sich überlagern bei aufzeichnung wegen nicht gps
