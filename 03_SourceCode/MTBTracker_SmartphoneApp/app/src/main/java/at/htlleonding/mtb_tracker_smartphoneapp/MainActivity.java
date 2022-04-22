@@ -20,3 +20,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
+
+
+//https://www.programmierenlernenhq.de/tutorial-android-daten-in-datei-speichern/
