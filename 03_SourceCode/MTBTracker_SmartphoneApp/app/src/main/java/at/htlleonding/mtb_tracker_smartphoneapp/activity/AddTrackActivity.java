@@ -1,8 +1,11 @@
-package at.htlleonding.mtb_tracker_smartphoneapp;
+package at.htlleonding.mtb_tracker_smartphoneapp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Button;
+
+import at.htlleonding.mtb_tracker_smartphoneapp.R;
 
 public class AddTrackActivity extends AppCompatActivity {
 
@@ -10,5 +13,9 @@ public class AddTrackActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_track);
+
+        Button goB = findViewById(R.id.backButton);
+        goB.setOnClickListener(v->{setContentView(R.layout.activity_main);});
     }
+
 }

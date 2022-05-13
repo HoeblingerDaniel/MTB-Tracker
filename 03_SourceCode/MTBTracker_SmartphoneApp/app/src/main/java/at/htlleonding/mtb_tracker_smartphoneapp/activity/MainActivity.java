@@ -1,10 +1,11 @@
-package at.htlleonding.mtb_tracker_smartphoneapp;
+package at.htlleonding.mtb_tracker_smartphoneapp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+
+import at.htlleonding.mtb_tracker_smartphoneapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,10 +16,12 @@ public class MainActivity extends AppCompatActivity {
 
         Button addTrackButton = findViewById(R.id.addTrackButton);
         addTrackButton.setOnClickListener(v -> {
-            Intent addTrackIntent = new Intent(getBaseContext(), AddTrackActivity.class);
-            startActivity(addTrackIntent);
+           // Intent addTrackIntent = new Intent(getBaseContext(), AddTrailActivity.class);
+          //  startActivity(addTrackIntent);
+            setContentView(R.layout.activity_add_track);
         });
     }
+
 }
 
 
