@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.GPSTracker">
+    tools:context="at.htlleonding.mtb_tracker_smartphoneapp.activity.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/tableRow1"
@@ -32,7 +32,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/addTrackButton"
+        android:id="@+id/addTrailButton"
         android:layout_width="132dp"
         android:layout_height="65dp"
         android:text="@string/add_trail"
