@@ -51,6 +51,8 @@ public class CompareActivity extends AppCompatActivity {
         TextView time2 = this.findViewById(R.id.compareTimeTV2);
         TextView speed1 = this.findViewById(R.id.compareSpeedTV1);
         TextView speed2 = this.findViewById(R.id.compareSpeedTV2);
+        TextView distance1 = this.findViewById(R.id.distanceTV1);
+        TextView distance2 = this.findViewById(R.id.distanceTV2);
 
         tv1.setText(records[0].mData.mName);
         tv2.setText(records[1].mData.mName);
@@ -73,18 +75,21 @@ public class CompareActivity extends AppCompatActivity {
             time2.setText("The time you took: " + minutes + " minutes and " + seconds+ " seconds." );
         }
 
-        float avgSpeed1 = 0;
+        double avgSpeed1 = 0;
         for (int i = 0; i < records[0].mData.mSpeed.size(); i++) {
-            avgSpeed1 += records[0].mData.mSpeed.get(i);
+            avgSpeed1 += records[0].mData.mSpeed.get(i).doubleValue();
         }
         avgSpeed1 /= records[0].mData.mSpeed.size();
-        speed1.setText(String.valueOf(avgSpeed1));
+        speed1.setText("Average Speed: " + avgSpeed1 + "m/s");
 
-        float avgSpeed2 = 0;
+        double avgSpeed2 = 0;
         for (int i = 0; i < records[1].mData.mSpeed.size(); i++) {
-            avgSpeed2 += records[1].mData.mSpeed.get(i);
+            avgSpeed2 += records[1].mData.mSpeed.get(i).doubleValue();
         }
         avgSpeed2 /= records[1].mData.mSpeed.size();
-        speed2.setText(String.valueOf(avgSpeed2));
+        speed2.setText("Average Speed: " + avgSpeed2 + "m/s");
+
+        distance1.setText("Distance: " + records[0].mData.mTime * avgSpeed1 + "m");
+        distance2.setText("Distance: " + records[1].mData.mTime * avgSpeed2 + "m");
     }
 }

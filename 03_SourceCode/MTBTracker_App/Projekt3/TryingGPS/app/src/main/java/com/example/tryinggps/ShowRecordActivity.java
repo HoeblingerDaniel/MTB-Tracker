@@ -58,12 +58,12 @@ public class ShowRecordActivity extends AppCompatActivity {
             }
             System.out.println("displays name");
 
-            float avgSpeed = 0; //why does it say that its null
+            double avgSpeed = 0; //why does it say that its null
             for (int i = 0; i < mRecord.mData.mSpeed.size(); i++) {
-                avgSpeed += mRecord.mData.mSpeed.get(i);
+                avgSpeed += mRecord.mData.mSpeed.get(i).doubleValue();
             }
             avgSpeed /= mRecord.mData.mSpeed.size();
-            speedTV.setText("Your average speed: " + String.valueOf(avgSpeed));
+            speedTV.setText("Your average speed: " + avgSpeed);
             TextView headline = new TextView(getBaseContext());
             headline.setText("This is the Record :" + mRecord.mData.mName);
 
