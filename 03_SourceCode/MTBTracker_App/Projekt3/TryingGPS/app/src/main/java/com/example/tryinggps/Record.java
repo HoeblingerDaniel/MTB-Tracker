@@ -93,7 +93,6 @@ public class Record extends AppCompatActivity {
 
                 if(!mRecording ) {
                     if(!shouldRun[0]){
-
                     }
 
                     else{
@@ -152,7 +151,8 @@ public class Record extends AppCompatActivity {
         String lon = "Current Longitude: ";
         lon += String.valueOf(mData.mLongitudes.get(mData.mLongitudes.size()-1));
         String speed = "Speed: ";
-        speed +=   String.valueOf(mData.mSpeed.get(mData.mSpeed.size()-1));
+        speed += String.valueOf(mData.mSpeed.get(mData.mSpeed.size()-1));
+        speed += " m/s";
         String timeString = "Time: ";
         timeString += String.valueOf((System.currentTimeMillis() - startTime) /1000);
         latTV.setText(lat);

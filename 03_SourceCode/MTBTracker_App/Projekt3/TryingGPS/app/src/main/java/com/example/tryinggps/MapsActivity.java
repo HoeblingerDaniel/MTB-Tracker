@@ -73,7 +73,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 mMap.addPolyline(new PolylineOptions().add(pos1, pos2));
             }
 
-            LatLng myPos = new LatLng(lat, lon);
+            LatLng myPos = new LatLng(48.26852, 14.25228);
             mMap.addMarker(new MarkerOptions().position(myPos).title("You are here"));
             mMap.moveCamera(CameraUpdateFactory.newLatLng(myPos));
         }

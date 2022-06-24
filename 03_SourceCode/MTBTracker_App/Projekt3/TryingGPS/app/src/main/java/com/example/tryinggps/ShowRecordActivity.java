@@ -47,6 +47,7 @@ public class ShowRecordActivity extends AppCompatActivity {
         TextView nameTV = this.findViewById(R.id.nameTV);
         TextView speedTV = this.findViewById(R.id.speedTV);
         TextView time = this.findViewById(R.id.textView4);
+        TextView distanceTV = this.findViewById(R.id.distanceTV);
 
         if (mRecord != null) {
             if (mRecord.mData.mName == null) {
@@ -56,19 +57,18 @@ public class ShowRecordActivity extends AppCompatActivity {
                 nameTV.setText(mRecord.mData.mName);
             }
             System.out.println("displays name");
-            if (mRecord.mData.mLatitudes == null) {
-                speedTV.setText("Locations null");
+
+            float avgSpeed = 0; //why does it say that its null
+            for (int i = 0; i < mRecord.mData.mSpeed.size(); i++) {
+                avgSpeed += mRecord.mData.mSpeed.get(i);
             }
-            else {
-                float avgSpeed = 0; //why does it say that its null
-                for (int i = 0; i < mRecord.mData.mSpeed.size(); i++) {
-                    avgSpeed += mRecord.mData.mSpeed.get(i);
-                }
-                avgSpeed /= mRecord.mData.mSpeed.size();
-                speedTV.setText("Your average speed: " + String.valueOf(avgSpeed));
-                TextView headline = new TextView(getBaseContext());
-                headline.setText("This is the Record :" + mRecord.mData.mName);
-            }
+            avgSpeed /= mRecord.mData.mSpeed.size();
+            speedTV.setText("Your average speed: " + String.valueOf(avgSpeed));
+            TextView headline = new TextView(getBaseContext());
+            headline.setText("This is the Record :" + mRecord.mData.mName);
+
+            distanceTV.setText("Distance " + mRecord.mData.mTime * avgSpeed + " m");
+
             if(mRecord.mData.mTime < 60){
                 time.setText("The time u took: " + mRecord.mData.mTime +" seconds");
             }

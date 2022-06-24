@@ -67,6 +67,11 @@ public class MainActivity extends AppCompatActivity {
             LinearLayout linearLayout = this.findViewById(R.id.linearLayout);
             linearLayout.removeAllViews();
 
+            if (!compare) {
+                selectedRecords[0] = null;
+                selectedRecords[1] = null;
+            }
+
             for (Record r : temp) {
                 cRec1 = false;
                 if(r.mData.mLatitudes.size()  >= 1) {
@@ -97,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
                                     if (selectedRecords[1] == null && !cRec1) {
                                         selectedRecords[1] = r;
                                     }
+                                    cRec1 = false;
                                 }
                                 else {
                                     r.isSelected = false;
